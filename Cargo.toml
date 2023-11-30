@@ -1,0 +1,22 @@
+[package]
+name = "eldenring-slowmotion-speffect"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+panic = "abort"
+opt-level = "z"
+
+[dependencies]
+regex = "1"
+log = "0.4.1"
+serde = "1.0.160"
+toml = "0.7.1"
+broadsword = { git = "https://github.com/vswarte/broadsword.git" }
+detour = { git = "https://github.com/veeenu/detour-rs.git", branch = "master" }
